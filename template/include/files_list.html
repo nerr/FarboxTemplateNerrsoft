@@ -1,0 +1,18 @@
+<ul class="thumbnails marketing">
+{% for file in files %}
+    <li {% if file.content_type == 'folder' %}class="folder span3"{% endif %}>
+    	<div class="thumbnail">
+        <a href="/file/{{file.path}}">
+            <img src='{{ file.url }}?width=320&height=214&fixed=true' />
+
+            <!-- {% if file.content_type == 'folder' %}
+            <span>{{ file.images_count }} 张照片</span>
+            {% endif %} -->
+        </a>
+        <p>{{ file.title }}</p>
+    	</div>
+    </li>
+{% endfor %}
+</ul>
+
+{% include 'include/paginator.html' %}

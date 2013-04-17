@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel='alternate' type='application/rss+xml' title='atom 1.0' href='/feed' />
+	<title>{% block title %}{% endblock %} | {{ site.configs.site_name }}</title>
+
+	<!-- style -->
+	<link href="/t/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link rel='stylesheet' id='theme-font-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/t/css/bootstrap-responsive.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/t/img/favicon.ico">
+
+	<link href="/t/css/style.css" rel="stylesheet" media="screen">
+
+	<!--[if lt IE 9]><script src="/t/js/html5.js"></script><![endif]-->
+	<!--[if (gte IE 6)&(lte IE 8)]><script src="/t/js/selectivizr-min.js"></script><![endif]-->
+</head>
+
+<body>
+	<!-- #header -->
+	<header id="header">
+		<div class="container-narrow">
+			<div class="row-fluid">
+				<div class="span3">
+					<a title="" href="/"><img src="/t/img/logo.png" class="img-rounded" alt="" /></a>
+				</div>
+
+				<div class="span9">
+					<ul class="nav nav-pills pull-right">
+						<li><a data-toggle="modal" href="/" >Home</a></li>
+						<li><a data-toggle="modal" href="/archive" >Archive</a></li>
+						<li><a data-toggle="modal" href="/folder/" >Photos</a></li>
+						<li><a data-toggle="modal" href="/links.md" >Links</a></li>
+						<li><a data-toggle="modal" href="/about.md" >About</a></li>
+						<li><a data-toggle="modal" href="/projects.md" >Projects</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- #page-header -->
+		<div id="page-header" class="clearfix">
+			<div class="container-narrow">
+				<h1>Blog</h1>
+				<p>Bits and Pieces of My Life</p>
+			</div>
+		</div>
+		<!-- /#page-header -->
+
+		<!-- #breadcrumbs -->
+		<div id="page-subnav" class="clearfix">
+			<div class="container-narrow">
+				<div id="breadcrumbs">
+					<a href="/">Home</a><span class="sep">/</span><a href="/">Blog</a><span class="sep">/</span>
+				</div>
+			</div>
+		</div>
+		<!-- /#breadcrumbs -->
+
+	</header>
+	<!-- /#header -->
+
+	<!-- container -->
+	<div class="container-narrow">
+
+		<div class="row-fluid">
+			<div class="span8">
+				{% block content %}
+				{% endblock %}
+			</div>
+
+			<div class="span4">
+				<div class="tags"><h4>Tags</h4>
+					{% for tag_name, tag_count in site.tags %}
+
+					<a class="tag" href="/tags/{{ tag_name }}" title="{{ tag_count }}">{{ tag_name }}</a>
+
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- /container -->
+
+	<!-- #footer-bottom -->
+	<footer id="footer" class="clearfix">
+
+		<!-- #footer-widgets -->
+		<div id="footer-widgets" class="clearfix">
+			<div class="container-narrow">
+				<div class="row-fluid">
+					<div class="span4">
+						<h4 class="widget-title"><span>Contact Me</span></h4>
+						<div class="textwidget">
+							<p>Feel free to contact me if you want, I will answer each and every email.</p>
+							<p><a href="mailto:leon@nerrsoft.com">leon@nerrsoft.com</a></p>
+						</div>
+					</div>
+
+					<div class="span4">
+						<h4 class="widget-title"><span>About Me</span></h4>
+						<div class="textwidget">
+							<p>Leon Zhuang</p>
+							<p>Who am I?</p>
+						</div>
+					</div>
+
+					<div class="span4">
+						<h4 class="widget-title"><span>Follow Me</span></h4>
+						<div class="textwidget">
+							<p><a href="https://github.com/nerr" target="_blank">Github</a></p>
+							<p><a href="https://twitter.com/nerrsoft" target="_blank">Twitter</a></p>
+							<p><a href="https://foursquare.com/nerrsoft" target="_blank">Foursquare</a></p>
+							<p><a href="https://www.douban.com/people/nerrsoft/" target="_blank">Douban</a></p>
+							<p><a href="http://nerrsoft.com/feed" target="_blank">Feed</a></p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /#footer-widgets -->
+
+		<!-- #copyright -->
+		<div id="footer-copyright" class="clearfix">
+			<div class="container-narrow">
+				<small id="copyright" role="contentinfo">Copyright &copy; {{ site.configs.site_copyright_year }}  <b>{{ site.configs.site_name_domain }}</b> All rights reserved. | 
+					Powered by <a href="http://farbox.com/" target="_blank">FarBox.com</a> &amp; 
+					Built with <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a> | 
+					>Clone <a href="http://nerrsoft.com/template" target="_blank">Template</a>
+				</small>
+			</div>
+		</div>
+		<!-- /#copyright -->
+
+	</footer> 
+	<!-- /#footer-bottom -->
+
+	<!-- javascript -->
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="/t/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-28003762-1']);
+	_gaq.push(['_setDomainName', 'nerrsoft.com']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+	</script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#c_author').show();
+	});
+	</script>
+	<!-- /javascript -->
+
+</body>
+</html>
