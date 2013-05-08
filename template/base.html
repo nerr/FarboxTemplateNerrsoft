@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="baidu-site-verification" content="gWTbDCK9DwceAy75" />
 	<link rel='alternate' type='application/rss+xml' title='atom 1.0' href='/feed' />
 	<title>{% block title %}{% endblock %} | {{ site.configs.site_name }}</title>
 
@@ -11,6 +12,10 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/t/css/bootstrap-responsive.css" rel="stylesheet">
+
+	<link href="/t/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/t/google-code-prettify/prettify.js"></script>
+
 	<link rel="shortcut icon" href="/t/img/favicon.ico">
 
 	<link href="/t/css/style.css" rel="stylesheet" media="screen">
@@ -19,7 +24,7 @@
 	<!--[if (gte IE 6)&(lte IE 8)]><script src="/t/js/selectivizr-min.js"></script><![endif]-->
 </head>
 
-<body>
+<body onload="prettyPrint()">
 	<!-- #header -->
 	<header id="header">
 		<div class="container-narrow">
@@ -162,6 +167,8 @@
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$('#c_author').show();
+
+		prettyPrint();
 	});
 	</script>
 	<!-- /javascript -->
