@@ -695,7 +695,7 @@ h6 {
 
 #header {
 	border-top: none 4px solid #333333;
-	padding:40px 0;
+	padding:30px 0 0 0;
 	position: relative;
     z-index: 999;
 }
@@ -718,9 +718,13 @@ h6 {
 	outline:none;
 }
 #header #logo img {
-	height: 50px;
+	height: 100%;
 	display:block;
 	margin:0 auto;
+}
+#header #logomenu
+{
+	padding-bottom: 20px;
 }
 @media screen and (max-width: 860px) {
 #header {
