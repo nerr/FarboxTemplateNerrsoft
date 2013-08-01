@@ -2033,3 +2033,394 @@ blockquote p {
 	font-size: 14px;
 	padding:0 0 26px;
 }
+
+
+/* for archive*/
+
+.list_with_title{
+    font-size: 14px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.list_with_title li{
+    list-style-type: none;
+    padding: 0;
+    width: 60%;
+}
+
+
+.list_with_title .listing_title {
+    font-weight: bold;
+    line-height: 2.2em;
+    margin: 50px 0 5px 0;
+    font-size: 1.4em;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.list_with_title .listing{
+    margin: 0;
+    padding: 0;
+}
+
+
+.list_with_title .listing li{
+    line-height: 2.9em;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding: 0 5px;
+    text-align: left;
+    font-weight: normal;
+    *font-size: 12px;
+}
+
+.list_with_title .date {
+    position: absolute;
+    right: 5px;
+    color: #999999;
+    font-size: 12px;
+}
+
+
+
+
+/* for image list starts*/
+
+#image_list{
+    list-style-type: none;
+    display:inline-block;
+    zoom:1;
+    *display:inline;
+    clear: both;
+    padding: 0;
+    margin-top: 50px;
+
+}
+
+#image_list li{
+    display: inline;
+    position: relative;
+    float: left;
+    width:320px;
+    height:214px;
+    overflow: hidden;
+    margin: 8px;
+
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+
+
+#image_list img{
+    width:320px;
+    border: none;
+
+}
+
+#image_list li:hover{
+    -webkit-box-shadow: 0 0 5px red;
+    -moz-box-shadow: 0 0 5px red;
+    box-shadow: 0 0 5px red;
+}
+
+#image_list a:hover img{
+    border-left: 1px solid red;
+}
+
+
+#image_list .folder span{
+    bottom:0;
+    left:1px;
+    position: absolute;
+    height:30px;
+    width:300px;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+    background: #000;
+    background: rgba(0,0,0,0.5);
+    filter: Alpha(Opacity=50);
+    padding:0 10px;
+    z-index: 1000;
+}
+
+
+/* for image list ends*/
+
+#images_container{
+    position: relative;
+    width: 100%;
+}
+
+
+.bread_nav{
+    position: absolute;
+    top: 1.9em;
+    left: 0;
+    letter-spacing: 1px;
+    z-index: 100;
+    padding: 0 10px;
+    margin: 0;
+    background: #b3b3b3;
+    background: rgba(150,150,150,0.5);;
+    color: #fdfdfd;
+    font-size: 0.9em;
+}
+
+
+
+.bread_nav a{
+    color: #fff;
+}
+
+.bread_nav a:hover{
+    border-bottom: 1px dashed #fff;
+}
+
+.bread_nav li{
+    list-style-type: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#image{
+    margin:50px auto;
+    position: relative;
+    min-height: 50px;
+}
+
+#image img{
+    position: relative;
+    z-index: 0;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+#image .info{
+    position: absolute;
+    right:0;
+    bottom: 0;
+    background: rgba(150,150,150,0.5);
+    color: #fdfdfd;
+    font-size: 0.9em;
+    z-index: 999;
+}
+
+/* connected images */
+#image .connected_images{
+    position: absolute;
+    z-index: 99;
+    top:0;
+    width:100%;
+    height: 100%;
+}
+
+#image .connected_images a{
+    display: block;
+    width:50%;
+    float: left;
+    height:100%;
+}
+
+#image .connected_images span{
+    font-size: 1.2em;
+    color:#fff;
+    letter-spacing: 2px;
+    bottom:20px;
+    display: none;
+    position: absolute;
+    top: 45%;
+}
+
+
+#image .connected_images a{
+    background: #9b9b9b;
+    background: rgba(0, 0, 0, 0);
+    filter: Alpha(Opacity=0);
+}
+
+#image .connected_images a:hover{
+    background: #9b9b9b;
+    background: rgba(0, 0, 0, 0.3);
+    filter: Alpha(Opacity=30);
+    border: none;
+
+}
+
+#image .connected_images a:hover span{
+    display: block;
+}
+
+
+#image .connected_images .pre{
+    left:0;
+}
+
+#image .connected_images .pre span{
+    left:5px;
+}
+
+#image .connected_images .next{
+    right:0;
+}
+
+#image .connected_images .next span{
+    right:5px;
+}
+
+/* connected images ends*/
+/* Custom sizes
+============================================================================================== */
+
+@media screen and (max-width: 768px) {
+    /* ipad 竖， iphone横 */
+    .container, .container80{
+        width: 85%;
+    }
+
+    #description .slogan_content{
+        margin: auto 0;
+    }
+
+    #posts .post p{
+        line-height: 1.7em;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    /* Add your styles for devices with a maximum width of 480 */
+    .container, .container80{
+        width: 95%;
+    }
+
+    .bread_nav{
+        top: 4em;
+        background: #555;
+    }
+
+    #posts .pager{
+        margin-top: 20px;
+    }
+
+    #posts .post .title{
+        font-size: 1.3em;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    #posts .post .title a:before{
+        margin-bottom: 0;
+    }
+
+}
+
+
+@media screen and (max-width: 320px) {
+    /* iphone 竖*/
+    .container{
+        width: 92%
+    }
+
+    .container80{
+        width: 95%;
+    }
+
+    #image_list li{
+        width: 93.5%;
+        margin: 0;
+        padding:0 3.25%;
+    }
+
+    #description{
+        height: 300px;
+    }
+
+
+    #posts .post{
+        margin: 5em 0;
+    }
+
+    #nav a {
+        padding: 1px 10px;
+    }
+
+
+
+    #image_list li{
+        margin: 10px;
+        display: block;
+        padding: 0;
+    }
+
+    #image_list li img{
+        width: 300px;
+    }
+
+
+
+}
+
+
+
+/*iphone 横*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) and (orientation: landscape) {
+
+    .container80{
+        width: 95%;
+    }
+
+    #description{
+        height: 300px;
+    }
+
+
+    #images_container .bread_nav{
+        top: 0;
+    }
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 1240px) {
+    .container{
+        width: 900px;
+    }
+
+}
+
+
+@media screen and (max-width: 860px) {
+    .container{
+        width: 90%;
+    }
+
+}
+
+
+/* iPads (landscape) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .container {
+        width: 75%;
+    }
+}
+/* iPads (portrait) ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* Add your styles for devices with a maximum width of 768 */
+}
