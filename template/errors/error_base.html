@@ -1,29 +1,102 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>{% block title %} {% endblock %}</title>
-    <link rel="stylesheet" href="http://resource.farbox.com/css/style.css?version={{ resource_version }}">
+    <meta charset="utf-8">
+    <meta name="description" content="Nerrsoft,Leon Zhuang,Blog,Life,Tech,Read,Book,Music,Rock,Forex,Trade,Running" />
+    <meta name="baidu-site-verification" content="gWTbDCK9DwceAy75" />
+    <link rel='alternate' type='application/rss+xml' title='atom 1.0' href='/feed' />
+    <title>{% block title %}{% endblock %} | {{ site.configs.site_name }}</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="/t/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/t/css/font-awesome/css/font-awesome.min.css">
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="/t/css/font-awesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <link rel='stylesheet' id='theme-font-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/t/css/bootstrap-responsive.css">
+
+    <link href="/t/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/t/google-code-prettify/prettify.js"></script>
+
+    <link rel="shortcut icon" href="/t/img/favicon.ico">
+
+    <link href="/t/css/style.css" rel="stylesheet" media="screen">
+
+    <!--[if lt IE 9]><script src="/t/js/html5.js"></script><![endif]-->
+    <!--[if (gte IE 6)&(lte IE 8)]><script src="/t/js/selectivizr-min.js"></script><![endif]-->
 </head>
-<body>
 
+<body onload="prettyPrint()">
+    <!-- #header -->
+    <header id="header">
+        <div class="container-narrow" id="logomenu">
+            <div class="row-fluid">
+                <div class="span3" id="logo">
+                    <a title="" href="/"><img src="/t/img/logo.png" class="img-rounded"  alt="Nerrsoft.com" /></a>
+                </div>
 
-<div id="content">
-    {% block content %}
-    {% endblock %}
-</div>
+                <div class="span9">
+                    <ul class="nav nav-pills pull-right">
+                        <li><a data-toggle="modal" href="/" >Home</a></li>
+                        <li><a data-toggle="modal" href="/blog" >Blog</a></li>
+                        <li><a data-toggle="modal" href="/archive" >Archive</a></li>
+                        <li><a data-toggle="modal" href="/folder/" >Photos</a></li>
+                        <li><a data-toggle="modal" href="/links.md" >Links</a></li>
+                        <li><a data-toggle="modal" href="/about.md" >About</a></li>
+                        <!-- <li><a data-toggle="modal" href="/projects.md" >Projects</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
 
+        <!-- #page-header -->
+        <div id="page-header" class="clearfix">
+            <div class="container-narrow">
+                <h1>Blog</h1>
+                <p>Bits and Pieces of My Life</p>
+            </div>
+        </div>
+        <!-- /#page-header -->
 
+        <!-- #breadcrumbs -->
+        <div id="page-subnav" class="clearfix">
+            <div class="container-narrow">
+                <div id="breadcrumbs">
+                    <a href="/">Home</a><span class="sep">/</span><a href="/">Error</a><span class="sep">/</span>
+                </div>
+            </div>
+        </div>
+        <!-- /#breadcrumbs -->
 
-<div id="footer">
+    </header>
+    <!-- /#header -->
 
-    <div class="powered_by">
-        <a target='_blank' href="http://www.farbox.com">Proudly Powered By FarBox.com</a>
-        <span>©2012-2015 Z.R.E.Y Inc.</span>
+    <!-- container -->
+    <div class="container-narrow">
+
+        <div class="row-fluid">
+            <div class="span12">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+
     </div>
-</div>
+    <!-- /container -->
+
+    {% include 'include/footer.html' %}
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('#c_author').show();
+
+        prettyPrint();
+    });
+    </script>
+    <!-- /javascript -->
 
 </body>
 </html>
-
-
