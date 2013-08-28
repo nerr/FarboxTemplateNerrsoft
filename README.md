@@ -4,4 +4,4 @@ FarboxTemplateNerrsoft
 A template for farbox made by [Nerrsoft.com](http://nerrsoft.com)
 
 **Snap**
-![snap](https://i.minus.com/iAqf3wCZEsSRx.png)
+![snap](http://i6.minus.com/iAh2UqJ46SWil.png)
