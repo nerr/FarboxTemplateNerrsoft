@@ -18,8 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/t/css/bootstrap-responsive.css">
 
-    <link href="/t/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="/t/google-code-prettify/prettify.js"></script>
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
 
     <link rel="shortcut icon" href="/t/img/favicon.ico">
 
@@ -84,13 +84,7 @@
             </div>
 
             <div class="span4">
-                <div class="tags"><h4><i class="icon-tags"></i>&nbsp;Tags</h4>
-                    {% for tag_name, tag_count in site.tags %}
-
-                    <a class="tag" href="/tags/{{ tag_name }}" title="{{ tag_count }}">{{ tag_name }}</a>
-
-                    {% endfor %}
-                </div>
+                {% include 'include/sidebar.html' %}
             </div>
         </div>
 
@@ -100,11 +94,7 @@
     {% include 'include/footer.html' %}
 
     <script type="text/javascript">
-    $(document).ready(function(){
-        $('#c_author').show();
-
-        prettyPrint();
-    });
+    hljs.initHighlightingOnLoad();
     </script>
     <!-- /javascript -->
 
