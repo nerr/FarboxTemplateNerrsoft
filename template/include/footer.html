@@ -9,15 +9,16 @@
                         <h4 class="widget-title"><span>Contact Me</span></h4>
                         <div class="textwidget">
                             <p>Feel free to contact me if you want, I will answer each and every email.</p>
-                            <p><a href="mailto:leon@nerrsoft.com">leon@nerrsoft.com</a></p>
+                            <p><a href="mailto:leon@nerrsoft.com"><i class="icon-envelope-alt icon-large"></i></a></p>
                         </div>
                     </div>
 
                     <div class="span4">
-                        <h4 class="widget-title"><span>About Me</span></h4>
+                        <h4 class="widget-title"><span>I Am A Runner</span></h4>
                         <div class="textwidget">
-                            <p>Leon Zhuang</p>
-                            <p>Who am I?</p>
+                            <p id="nikeplus">
+                            </p>
+                            <a href="http://my.nikeplus.com/Nerrsoft" target="_blank"><img src="/t/img/nikeplus.png" width="24" />
                         </div>
                     </div>
 
@@ -66,6 +67,20 @@
     <!-- javascript -->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="/t/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    //-- load nike plus running data
+    var url = "http://run.nerrsoft.com/index.php?callback=?";
+    $(function(){
+        var jq = jQuery.noConflict();
+        jq.getJSON(url).done(function(data){
+            jq.each(data.activitys, function(i, act){
+                jq("#nikeplus").append(act.date + " Dist. <b>" + act.distance + "</b> AvgPace <b>" + act.pace + "</b><br />");
+            });
+        });
+    });
+    </script>
+
     <script type="text/javascript">
 
         var _gaq = _gaq || [];
