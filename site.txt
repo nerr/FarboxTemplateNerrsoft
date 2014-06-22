@@ -1,0 +1,35 @@
+---
+title: Nerrsoft
+avatar: /_image/avatar.jpg
+posts_per_page:
+post_content_type: markdown
+post_paragraph_indent: no
+file_path: images
+show_toc: yes
+mathjax: no
+disqus: nerrsoft
+duoshuo:
+template_priority: auto
+template_inherit: yes
+template_clone_allowed: yes
+scripts_per_page:
+scripts_for_doc:
+nano: no
+comment: yes
+sync_by_3rd: no
+sync_by_3rd_public: no
+score_degree:
+hidden_urls:
+users:
+domain: nerr.farbox.com
+domains:
+- nerrsoft.com
+
+meta_description: Nerrsoft,Leon Zhuang,Blog,Life,Tech,Read,Book,Music,Rock,Forex,Trade,Running,Marathon,Freelance
+baidu_site_verification: gWTbDCK9DwceAy75
+google_analytics_id:
+domain_name: nerrsoft.com
+site_name_domain: Nerrsoft.com
+site_copyright_year: 2014
+site_author: Leon Zhuang
+---

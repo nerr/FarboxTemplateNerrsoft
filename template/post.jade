@@ -1,0 +1,29 @@
+extends base
+block title
+    post.title
+
+block content
+    .post
+        h2.post_title
+            a(href="###")= post.title
+        ul.entry-meta.clearfix
+            li.date
+                strong Posted:&nbsp;
+                time(datetime="{{post.date.format('%Y-%m-%d')}}") {{post.date.format('%Y-%m-%d %H:%M')}}
+            li.author
+                span /&nbsp;
+                strong By:&nbsp;
+                span {{site.configs.site_author}}
+            li.visits
+                span /&nbsp;
+                strong Visits:&nbsp;
+                span {{post.visits}}
+
+        .post_body= post.content
+
+        .tags
+            strong Tagged:&nbsp;
+            for tag in post.tags
+                a.tag(href="/tag/{{tag}}")= tag
+
+    include include/disqus.jade

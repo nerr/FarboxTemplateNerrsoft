@@ -1,0 +1,167 @@
+html
+    head
+        meta(content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name="viewport")
+        meta(content="yes", name="apple-mobile-web-app-capable")
+        meta(content="black", name="apple-mobile-web-app-status-bar-style")
+        meta(content="telephone=no", name="format-detection")
+        meta(name="renderer", content="webkit")
+        title
+            block title
+                | {{ request.args.s or site.title }}
+        load('fonts //netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css //yandex.st/highlightjs/8.0/styles/github.min.css /template/css/style.less')
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,300italic' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="/t/img/favicon.ico">
+    body
+        header#header
+            div#logomenu.container
+                .row
+                    div#logo.col-md-3
+                        a(href="/") 
+                            img.limg-rounded(src="/template/img/logo.png", alt="{{ site.title }}")
+                    div.col-md-9
+                        ul.nav.nav-pills.pull-right
+                            li
+                                a(href="/")
+                                    span Home
+                            li
+                                a(href="/")
+                                    span Blog
+                            if has('posts')
+                                li
+                                    a(href="/archive")
+                                        span Archive
+                            if has('links.md')
+                                li
+                                    a(href="/links.md")
+                                        span Link
+                            if has('about.md')
+                                li
+                                    a(href="/about.md")
+                                        span About
+            
+            div#page-header
+                .container
+                    h1 Blog
+                    p Bits and Pieces of My Life
+            
+            div#page-subnav
+                .container
+                    div#breadcrumbs
+                        a(href="/") Home
+                        span.setp /
+                        a(href="/") Blog
+                        span.setp /
+
+        div.container
+            div.row
+                div.col-md-8
+                    block content
+                div.col-md-4
+                    .search
+                        .form-group.input-group
+                            span.input-group-addon
+                                i.fa.fa-search.fa-fw
+                            input#search_value.form-control(type="text", value=request.args.s, onkeyup="if (event.keyCode == 13) search();")
+                    .tags
+                        h4 
+                            i.fa.fa-tags &nbsp;Tags
+                        for tag_name, tag_count in site.tags
+                            a.tag(href="/tags/{{ tag_name }}") {{ tag_name }}
+
+        footer#footer
+            #footer-widgets
+                .container
+                    .row
+                        .col-md-4
+                            h4.widget-title
+                                span Contact Me
+                            .textwidget
+                                p Feel free to contact me if you want, I will answer each and every email.
+                                p
+                                    a(href="mailto:leon@nerrsoft.com")
+                                        i.fa.fa-envelope-o.fa-lg
+                                    span &nbsp;leon@nerrsoft.com
+
+                        .col-md-5
+                            h4.widget-title
+                                span I Am A Runner
+                            .textwidget
+                                p
+                                    #nikeplus.row-fluid
+                                a(href="https://secure-nikeplus.nike.com/plus/profile/Nerrsoft/")
+                                    img#nikelogo(src="/template/img/nikeplus.png")
+
+                        .col-md-3
+                            h4.widget-title
+                                span Reach Me
+                            .textwidget
+                                p
+                                    a(href="https://github.com/nerr") &nbsp;
+                                        i.fa.fa-github-square.fa-3x
+                                    a(href="https://twitter.com/nerrsoft") &nbsp;
+                                        i.fa.fa-twitter-square.fa-3x
+                                    a(href="https://foursquare.com/nerrsoft") &nbsp;
+                                        i.fa.fa-foursquare.fa-3x
+                                    a(href="https://www.facebook.com/nerrsoft") &nbsp;
+                                        i.fa.fa-facebook-square.fa-3x
+                                p
+                                    a(href="http://weibo.com/nerr") &nbsp;
+                                        i.fa.fa-weibo.fa-3x
+                                    a(href="#") &nbsp;
+                                        i.fa.fa-linkedin-square.fa-3x
+                                    a(href="http://www.flickr.com/photos/nerr") &nbsp;
+                                        i.fa.fa-flickr.fa-3x
+                                    a(href="https://plus.google.com/u/0/105802722064102150057") &nbsp;
+                                        i.fa.fa-google-plus-square.fa-3x
+
+            #footer-copyright
+                .container
+                    small#copyright 
+                        span Copyright &copy; {{ site.configs.site_copyright_year }} 
+                            b {{ site.configs.site_name_domain }} 
+                        span All rights reserved.
+                        span &nbsp;|&nbsp;Powered by 
+                            a(href="http://farbox.com/") FarBox.com
+                        span &nbsp;&amp;&nbsp;Built with 
+                            a(href="http://twitter.github.com/bootstrap/") Bootstrap
+                        span &nbsp;|&nbsp;Clone
+                            a(href="http://nerrsoft.com/template") Template
+
+        load("jquery //netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js //yandex.st/highlightjs/8.0/highlight.min.js //cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js")
+        script(type="text/javascript")
+            function search(){
+                if (document.getElementById('search_value').value){
+                    location.href='http://'+location.host+'?s='+document.getElementById('search_value').value;
+                }
+                return false;
+            }
+            //-- hight light
+            hljs.initHighlightingOnLoad();
+
+            //-- load nike plus running data
+            var url = "http://121.199.33.222/nike/index.php?num=4&callback=?";
+            $(function(){
+                var jq = jQuery.noConflict();
+                jq.getJSON(url).done(function(data){
+                    jq.each(data.activitys, function(i, act){
+                        jq("#nikeplus").append(
+                            act.date + "&nbsp;" + 
+                            '<strong>' + act.pace + '</strong>min/km&nbsp;' +
+                            '<strong>' + act.avghr + '</strong>bpm&nbsp' +
+                            '<strong>' + act.distance + '</strong>km<br />');
+                    });
+                });
+            });
+
+            //-- google analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '{{ site.configs.google_analytics_id }}']);
+            _gaq.push(['_setDomainName', '{{ site.configs.domain_name }}']);
+            _gaq.push(['_setAllowLinker', true]);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();

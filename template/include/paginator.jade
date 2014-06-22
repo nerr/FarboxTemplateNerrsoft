@@ -1,0 +1,11 @@
+if paginator.has_pre or paginator.has_next
+    nav.nerr-pagination
+        if paginator.has_pre
+            a.nerr-newer-posts(href=paginator.pre_url)
+                i.fa.fa-chevron-circle-left.fa-2x
+
+        span.nerr-page-number Page {{paginator.page}} of {{paginator.total_pages}}
+
+        if paginator.has_next
+            a.nerr-older-posts(href=paginator.next_url)
+                i.fa.fa-chevron-circle-right.fa-2x
